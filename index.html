@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Bosque Farm - Productos Agropecuarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-oscuro: #1a4d2e;
+            --verde-medio: #4a9d5e;
+            --verde-claro: #7dbb6a;
+            --verde-muy-claro: #b4e197;
+            --beige: #f5f0e1;
+            --blanco: #ffffff;
+            --sombra: rgba(0, 0, 0, 0.1);
+            --naranja: #FF9800;
+            --naranja-oscuro: #E65100;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--beige);
+        }
+        
+        /* Encabezado con imagen de fondo */
+        .hero {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('assets/img/background/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco);
+            padding: 100px 15px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .titulo-principal {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--blanco);
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .subtitulo {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            color: var(--blanco);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        
+        .btn-descubre {
+            background-color: var(--naranja);
+            color: var(--blanco);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+        
+        .btn-descubre:hover {
+            background-color: var(--naranja-oscuro);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Sección de descripción */
+        .descripcion {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('assets/img/background/desc-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .descripcion-texto {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 152, 0, 0.3);
+            color: var(--naranja);
+        }
+        
+        .descripcion-texto p {
+            margin-bottom: 20px;
+        }
+        
+        /* Sección de estadísticas */
+        .estadisticas {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('assets/img/background/stats-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .estadisticas-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .estadistica-item {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            min-width: 250px;
+            backdrop-filter: blur(5px);
+            border: 2px solid var(--naranja);
+        }
+        
+        .estadistica-valor {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--naranja);
+            text-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+        }
+        
+        .estadistica-texto {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--naranja);
+        }
+        
+        /* Sección de categorías */
+        .categorias {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('assets/img/background/categorias-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .categorias h2 {
+            color: var(--naranja);
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .categorias-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        
+        .categoria-item {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .categoria-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .categoria-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .categoria-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .categoria-titulo {
+            color: var(--blanco);
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            font-family: 'Merriweather', serif;
+        }
+        
+        /* Sección de ubicación */
+        .ubicacion {
+            padding: 80px 20px;
+            background-color: #000; /* Fondo negro */
+            text-align: center;
+        }
+        
+        .ubicacion h2 {
+            color: var(--naranja); /* Título en naranja */
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .mapa-container {
+            max-width: 1000px;
+            height: 400px;
+            margin: 40px auto 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mapa {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .direccion {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: var(--blanco); /* Texto en blanco */
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--verde-oscuro), var(--verde-medio));
+            color: var(--blanco);
+            text-align: center;
+            padding: 60px 15px 30px;
+        }
+        
+        .logo-footer {
+            font-family: 'Merriweather', serif;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--blanco);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contacto-footer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .contacto-icono {
+            color: var(--blanco);
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contacto-icono:hover {
+            color: var(--naranja);
+            transform: scale(1.1);
+        }
+        
+        .derechos {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .titulo-principal {
+                font-size: 2.5rem;
+            }
+            
+            .subtitulo {
+                font-size: 1.3rem;
+            }
+            
+            .estadisticas-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .estadistica-item {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .categoria-item {
+                min-width: 100%;
+            }
+            
+            .mapa-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado con imagen de fondo -->
+    <div class="hero">
+        <h1 class="titulo-principal">Experience Nature at El Bosque Farm</h1>
+        <p class="subtitulo">
+            Somos un negocio familiar dedicado a la venta de animales de granja, frutas frescas y árboles frutales.
+            Ofrecemos productos naturales, saludables y de calidad, ideales para tu hogar, finca o emprendimiento agrícola.
+            Todo lo que necesitas para sembrar, cosechar y criar en un solo lugar.
+        </p>
+        <a href="productos.html" class="btn-descubre">Descubre Nuestros Productos</a>
+    </div>
+    
+    <!-- Sección de descripción -->
+    <div class="descripcion">
+        <div class="descripcion-texto">
+            <p>En El Bosque Farm nos dedicamos a ofrecer productos agropecuarios de la más alta calidad. Nuestra finca, ubicada en el corazón de la naturaleza, cuenta con una amplia variedad de animales, árboles frutales y ornamentales, todos criados y cultivados con métodos orgánicos y sostenibles.</p>
+            <p>Nos enorgullece brindar un servicio confiable y personalizado, garantizando la satisfacción de nuestros clientes con productos frescos y naturales. ¡Visítanos y descubre la frescura y calidad que solo la naturaleza puede ofrecer!</p>
+        </div>
+    </div>
+    
+    <!-- Sección de estadísticas -->
+    <div class="estadisticas">
+        <div class="estadisticas-container">
+            <div class="estadistica-item">
+                <div class="estadistica-valor">+1.5K</div>
+                <div class="estadistica-texto">Clientes complacidos</div>
+            </div>
+            <div class="estadistica-item">
+                <div class="estadistica-valor">+2.5K</div>
+                <div class="estadistica-texto">Productos orgánicos vendidos</div>
+            </div>
+            <div class="estadistica-item">
+                <div class="estadistica-valor">3 años</div>
+                <div class="estadistica-texto">Generación de familia</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección de categorías -->
+    <div class="categorias">
+        <h2>Nuestras Categorías</h2>
+        <div class="categorias-container">
+            <div class="categoria-item">
+                <img src="assets/img/categorias/frutas.jpg" alt="Frutas frescas" class="categoria-img">
+                <div class="categoria-overlay">
+                    <h3 class="categoria-titulo">Fresh Fruit</h3>
+                </div>
+            </div>
+            <div class="categoria-item">
+                <img src="assets/img/categorias/animales.jpg" alt="Animales de granja" class="categoria-img">
+                <div class="categoria-overlay">
+                    <h3 class="categoria-titulo">Farm Animals</h3>
+                </div>
+            </div>
+            <div class="categoria-item">
+                <img src="assets/img/categorias/arboles.jpg" alt="Árboles frutales" class="categoria-img">
+                <div class="categoria-overlay">
+                    <h3 class="categoria-titulo">Fruit Trees</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección de ubicación -->
+    <div class="ubicacion">
+        <h2>Visítanos</h2>
+        <div class="mapa-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925911165!2d-80.32736520136785!3d25.54779590311037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b7a8a9edbd3d%3A0x6b9d9b8e7e1c1d1f!2s14370%20SW%20208th%20Ave%2C%20Miami%2C%20FL%2033196%2C%20USA!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" 
+                    class="mapa" 
+                    allowfullscreen="" 
+                    loading="lazy">
+            </iframe>
+        </div>
+        <p class="direccion">14370 SW 208th Ave Miami 33196-2147, Florida, Estados Unidos</p>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="logo-footer">El Bosque Farm</div>
+        <div class="contacto-footer">
+            <a href="mailto:elbosquefarminfo@gmail.com" class="contacto-icono">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.tiktok.com/@elbosquefarm" target="_blank" class="contacto-icono">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <div class="derechos">
+            <p>© 2023 El Bosque Farm - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
