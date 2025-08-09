@@ -15,6 +15,7 @@
             --beige: #f5f0e1;
             --blanco: #ffffff;
             --sombra: rgba(0, 0, 0, 0.1);
+            --rojo-agotado: #e74c3c;
         }
         
         * {
@@ -374,6 +375,12 @@
             color: var(--verde-oscuro);
         }
         
+        .carrito-item-precio {
+            font-weight: bold;
+            color: var(--verde-medio);
+            margin-left: 5px;
+        }
+        
         .carrito-item-cantidad {
             font-weight: bold;
             color: var(--verde-medio);
@@ -527,6 +534,26 @@
             text-decoration: underline;
         }
         
+        /* Estilo para productos agotados */
+        .agotado {
+            text-align: center;
+            color: var(--rojo-agotado);
+            font-weight: bold;
+            padding: 10px 0;
+            margin-top: auto;
+            background-color: rgba(231, 76, 60, 0.1);
+            border-radius: 5px;
+        }
+        
+        /* Precio de productos */
+        .producto-precio {
+            text-align: center;
+            font-weight: bold;
+            color: var(--verde-medio);
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .titulo-principal {
@@ -608,11 +635,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Huevos criollos orgánicos</h4>
                 <span class="producto-categoria">Animales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="1">-</button>
-                    <span class="cantidad-texto" id="cantidad-1">0</span>
-                    <button class="cantidad-btn aumentar" data-id="1">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -621,11 +644,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Pollitos</h4>
                 <span class="producto-categoria">Animales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="2">-</button>
-                    <span class="cantidad-texto" id="cantidad-2">0</span>
-                    <button class="cantidad-btn aumentar" data-id="2">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -634,11 +653,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Gallinas</h4>
                 <span class="producto-categoria">Animales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="16">-</button>
-                    <span class="cantidad-texto" id="cantidad-16">0</span>
-                    <button class="cantidad-btn aumentar" data-id="16">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -647,11 +662,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Gallinas de Guinea</h4>
                 <span class="producto-categoria">Animales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="3">-</button>
-                    <span class="cantidad-texto" id="cantidad-3">0</span>
-                    <button class="cantidad-btn aumentar" data-id="3">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -660,11 +671,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Chivos</h4>
                 <span class="producto-categoria">Animales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="4">-</button>
-                    <span class="cantidad-texto" id="cantidad-4">0</span>
-                    <button class="cantidad-btn aumentar" data-id="4">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -673,11 +680,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Carneros</h4>
                 <span class="producto-categoria">Animales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="5">-</button>
-                    <span class="cantidad-texto" id="cantidad-5">0</span>
-                    <button class="cantidad-btn aumentar" data-id="5">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -686,11 +689,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Conejos</h4>
                 <span class="producto-categoria">Animales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="6">-</button>
-                    <span class="cantidad-texto" id="cantidad-6">0</span>
-                    <button class="cantidad-btn aumentar" data-id="6">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -699,10 +698,21 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Codornices</h4>
                 <span class="producto-categoria">Animales</span>
+                <div class="agotado">Agotado</div>
+            </div>
+        </div>
+        
+        <!-- Nuevo producto: Guineo -->
+        <div class="producto" data-categoria="animales">
+            <img src="assets/img/categorias/animales/guineo.jpg" alt="Guineo" class="producto-img">
+            <div class="producto-info">
+                <h4 class="producto-nombre">Guineo</h4>
+                <span class="producto-categoria">Animales</span>
+                <div class="producto-precio">$5.50</div>
                 <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="7">-</button>
-                    <span class="cantidad-texto" id="cantidad-7">0</span>
-                    <button class="cantidad-btn aumentar" data-id="7">+</button>
+                    <button class="cantidad-btn disminuir" data-id="17">-</button>
+                    <span class="cantidad-texto" id="cantidad-17">0</span>
+                    <button class="cantidad-btn aumentar" data-id="17">+</button>
                 </div>
             </div>
         </div>
@@ -715,11 +725,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Naranjo</h4>
                 <span class="producto-categoria">Frutales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="8">-</button>
-                    <span class="cantidad-texto" id="cantidad-8">0</span>
-                    <button class="cantidad-btn aumentar" data-id="8">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -728,11 +734,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Mango</h4>
                 <span class="producto-categoria">Frutales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="9">-</button>
-                    <span class="cantidad-texto" id="cantidad-9">0</span>
-                    <button class="cantidad-btn aumentar" data-id="9">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -741,11 +743,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Aguacate</h4>
                 <span class="producto-categoria">Frutales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="10">-</button>
-                    <span class="cantidad-texto" id="cantidad-10">0</span>
-                    <button class="cantidad-btn aumentar" data-id="10">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -754,11 +752,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Limonero</h4>
                 <span class="producto-categoria">Frutales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="11">-</button>
-                    <span class="cantidad-texto" id="cantidad-11">0</span>
-                    <button class="cantidad-btn aumentar" data-id="11">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -770,11 +764,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Roble</h4>
                 <span class="producto-categoria">Ornamentales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="12">-</button>
-                    <span class="cantidad-texto" id="cantidad-12">0</span>
-                    <button class="cantidad-btn aumentar" data-id="12">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -783,11 +773,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Ciprés</h4>
                 <span class="producto-categoria">Ornamentales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="13">-</button>
-                    <span class="cantidad-texto" id="cantidad-13">0</span>
-                    <button class="cantidad-btn aumentar" data-id="13">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -796,11 +782,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Magnolia</h4>
                 <span class="producto-categoria">Ornamentales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="14">-</button>
-                    <span class="cantidad-texto" id="cantidad-14">0</span>
-                    <button class="cantidad-btn aumentar" data-id="14">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
         
@@ -809,11 +791,7 @@
             <div class="producto-info">
                 <h4 class="producto-nombre">Jacarandá</h4>
                 <span class="producto-categoria">Ornamentales</span>
-                <div class="controles-cantidad">
-                    <button class="cantidad-btn disminuir" data-id="15">-</button>
-                    <span class="cantidad-texto" id="cantidad-15">0</span>
-                    <button class="cantidad-btn aumentar" data-id="15">+</button>
-                </div>
+                <div class="agotado">Agotado</div>
             </div>
         </div>
     </div>
@@ -850,7 +828,7 @@
     <!-- Footer -->
     <footer>
         <div class="logo-footer">El Bosque Farm</div>
-        <p>© 2025 El Bosque Farm - Todos los derechos reservados</p>
+        <p>© 2023 El Bosque Farm - Todos los derechos reservados</p>
         <div class="contacto-footer">
             <p>Tik Tok: <a href="https://www.tiktok.com/@elbosquefarm" target="_blank">@ElBosqueFarm</a></p>
             <p>Correo: <a href="mailto:elbosquefarminfo@gmail.com">elbosquefarminfo@gmail.com</a></p>
@@ -861,22 +839,23 @@
         // Variables globales
         let carrito = [];
         const productos = [
-            { id: "1", nombre: "Huevos criollos orgánicos" },
-            { id: "2", nombre: "Pollitos" },
-            { id: "16", nombre: "Gallinas" },
-            { id: "3", nombre: "Gallinas de Guinea" },
-            { id: "4", nombre: "Chivos" },
-            { id: "5", nombre: "Carneros" },
-            { id: "6", nombre: "Conejos" },
-            { id: "7", nombre: "Codornices" },
-            { id: "8", nombre: "Naranjo" },
-            { id: "9", nombre: "Mango" },
-            { id: "10", nombre: "Aguacate" },
-            { id: "11", nombre: "Limonero" },
-            { id: "12", nombre: "Roble" },
-            { id: "13", nombre: "Ciprés" },
-            { id: "14", nombre: "Magnolia" },
-            { id: "15", nombre: "Jacarandá" }
+            { id: "1", nombre: "Huevos criollos orgánicos", precio: 0 },
+            { id: "2", nombre: "Pollitos", precio: 0 },
+            { id: "16", nombre: "Gallinas", precio: 0 },
+            { id: "3", nombre: "Gallinas de Guinea", precio: 0 },
+            { id: "4", nombre: "Chivos", precio: 0 },
+            { id: "5", nombre: "Carneros", precio: 0 },
+            { id: "6", nombre: "Conejos", precio: 0 },
+            { id: "7", nombre: "Codornices", precio: 0 },
+            { id: "8", nombre: "Naranjo", precio: 0 },
+            { id: "9", nombre: "Mango", precio: 0 },
+            { id: "10", nombre: "Aguacate", precio: 0 },
+            { id: "11", nombre: "Limonero", precio: 0 },
+            { id: "12", nombre: "Roble", precio: 0 },
+            { id: "13", nombre: "Ciprés", precio: 0 },
+            { id: "14", nombre: "Magnolia", precio: 0 },
+            { id: "15", nombre: "Jacarandá", precio: 0 },
+            { id: "17", nombre: "Guineo", precio: 5.50 } // Nuevo producto
         ];
         
         const carritoFlotante = document.getElementById('carrito-flotante');
@@ -936,6 +915,7 @@
                 
                 // Actualizar contador
                 actualizarContadorCarrito();
+                actualizarTotalCarrito();
                 
                 // Mostrar mensaje de éxito
                 mensajeAgregado.style.display = 'block';
@@ -964,6 +944,7 @@
                     
                     // Actualizar contador
                     actualizarContadorCarrito();
+                    actualizarTotalCarrito();
                 }
             });
         });
@@ -976,6 +957,18 @@
             } else {
                 carritoVacio.style.display = 'block';
             }
+        }
+        
+        // Función para actualizar el total del carrito
+        function actualizarTotalCarrito() {
+            let total = 0;
+            carrito.forEach(id => {
+                const producto = productos.find(p => p.id === id);
+                total += producto.precio;
+            });
+            
+            totalAcumulado.innerHTML = `<i class="fas fa-shopping-cart"></i> Total: $${total.toFixed(2)}`;
+            carritoTotal.textContent = `Total: $${total.toFixed(2)}`;
         }
         
         // Función para mostrar/ocultar el carrito flotante
@@ -1015,16 +1008,22 @@
                 }
             });
             
+            let totalPedido = 0;
+            
             // Crear elementos para cada producto en el carrito
             Object.keys(productosAgrupados).forEach(id => {
                 const cantidad = productosAgrupados[id];
                 const producto = productos.find(p => p.id === id);
                 
-                if (producto) {
+                if (producto && producto.precio > 0) {
+                    const subtotal = producto.precio * cantidad;
+                    totalPedido += subtotal;
+                    
                     const item = document.createElement('div');
                     item.className = 'carrito-item';
                     item.innerHTML = `
-                        <span class="carrito-item-nombre">${producto.nombre} <span class="carrito-item-cantidad">(x${cantidad})</span></span>
+                        <span class="carrito-item-nombre">${producto.nombre}</span>
+                        <span class="carrito-item-precio">$${subtotal.toFixed(2)}</span>
                         <button class="carrito-item-eliminar" data-id="${id}">
                             <i class="fas fa-trash"></i>
                         </button>
@@ -1033,6 +1032,9 @@
                     carritoItems.appendChild(item);
                 }
             });
+            
+            // Actualizar el total del carrito
+            carritoTotal.textContent = `Total: $${totalPedido.toFixed(2)}`;
             
             // Añadir eventos para eliminar productos
             document.querySelectorAll('.carrito-item-eliminar').forEach(btn => {
@@ -1043,10 +1045,11 @@
                     
                     // Actualizar contador en el producto
                     const cantidadElemento = document.getElementById(`cantidad-${id}`);
-                    cantidadElemento.textContent = '0';
+                    if (cantidadElemento) cantidadElemento.textContent = '0';
                     
                     actualizarVistaCarrito();
                     actualizarContadorCarrito();
+                    actualizarTotalCarrito();
                 });
             });
         }
@@ -1061,6 +1064,7 @@
             carrito = [];
             actualizarVistaCarrito();
             actualizarContadorCarrito();
+            actualizarTotalCarrito();
             carritoFlotante.style.display = 'none';
         });
         
@@ -1086,21 +1090,25 @@
                 }
             });
             
+            let totalPedido = 0;
+            
             // Añadir productos al mensaje
             Object.keys(productosAgrupados).forEach(id => {
                 const cantidad = productosAgrupados[id];
                 const producto = productos.find(p => p.id === id);
                 
-                if (producto) {
-                    mensaje += `- ${producto.nombre} (${cantidad} unidades)%0A`;
+                if (producto && producto.precio > 0) {
+                    const subtotal = producto.precio * cantidad;
+                    totalPedido += subtotal;
+                    mensaje += `- ${producto.nombre} (${cantidad} unidades): $${subtotal.toFixed(2)}%0A`;
                 }
             });
             
-            mensaje += `%0A¡Gracias!`;
+            mensaje += `%0ATotal: $${totalPedido.toFixed(2)}%0A%0A¡Gracias!`;
             
             // Crear enlace de WhatsApp
             const telefono = "17864036850";
-            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+            const url = `https://wa.me/${telefono}?text=${mensaje}`;
             
             // Abrir enlace
             window.open(url, '_blank');
