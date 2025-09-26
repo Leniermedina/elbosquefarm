@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es" lang="es">
+<head>
+  <title>El Bosque Farm — Contacto</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a class="logo" href="index.html"><span class="ebf-logo-text" aria-label="El Bosque Farm"><span>E</span><span>l</span><span class="sp">&nbsp;</span><span>B</span><span>o</span><span>s</span><span>q</span><span>u</span><span>e</span><span class="sp">&nbsp;</span><span>F</span><span>a</span><span>r</span><span>m</span></span></a>
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav.home">Inicio</a>
+        <a href="productos.html" data-i18n="nav.shop">Tienda</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+        <a href="acerca.html" data-i18n="nav.about">Acerca de</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" id="lang-toggle" title="ES/EN"><i class="fa-solid fa-language"></i></button>
+        <button class="icon-btn" id="theme-toggle" title="Light/Dark"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        <button class="icon-btn cart-indicator" id="cart-toggle" title="Carrito">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="section">
+    <h2 data-i18n="contact.title">Escríbenos</h2>
+    <p style="text-align:center" data-i18n="contact.subtitle">Envíanos un mensaje y te respondemos pronto</p>
+
+    <section class="contact-hero" data-hero="contact">
+  <div class="contact-hero__overlay" aria-hidden="true"></div>
+  <div class="contact-hero__grid">
+    <div class="contact-hero__content">
+      <h2 data-i18n="contact.title">Contáctenos</h2>
+      <p class="contact-hero__desc" data-i18n="contact.subtitle">Envíanos un mensaje y te respondemos pronto.</p>
+      </div>
+    <form id="contact-form" class="contact-form" autocomplete="on" novalidate>
+      <label>
+        <span data-i18n="contact.email">Correo</span>
+        <input type="email" id="cf-email" placeholder="name@email.com" required data-i18n="contact.email">
+      </label>
+      <label>
+        <span data-i18n="contact.name">Nombre</span>
+        <input type="text" id="cf-name" placeholder="Tu nombre" required data-i18n="contact.name">
+      </label>
+      <label class="span-2">
+        <span data-i18n="contact.address">Dirección</span>
+        <input type="text" id="cf-address" placeholder="Tu dirección" data-i18n="contact.address">
+      </label>
+      <label class="span-2">
+        <span data-i18n="contact.message">Mensaje</span>
+        <textarea id="cf-message" rows="4" placeholder="Cuéntanos..." required data-i18n="contact.message"></textarea>
+      </label>
+      <button class="btn btn--primary" id="cf-send" type="submit" data-i18n="contact.send">Enviar</button>
+    </form>
+  </div>
+</section>
+
+
+  <aside class="cart-drawer">
+    <div class="cart-drawer__header">
+      <strong data-i18n="cart.title">Tu Carrito</strong>
+      <button class="icon-btn" onclick="document.querySelector('.cart-drawer').style.display='none'"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer__list"></div>
+    <div class="cart-drawer__footer">
+      <div class="cart-empty-msg" data-i18n="cart.empty">El carrito está vacío</div>
+      <div><b data-i18n="cart.total">Total</b>: <span class="total-chip">$0.00</span></div>
+      <button class="btn btn--primary" id="wa-checkout" data-i18n="cart.checkout">Enviar pedido por WhatsApp</button>
+      <button class="btn btn--ghost" id="clear-cart" data-i18n="cart.clear">Vaciar carrito</button>
+    </div>
+  </aside>
+
+
+  <footer>
+    <p>© 2025 El Bosque Farm</p>
+    <p>TikTok: <a href="https://www.tiktok.com/@elbosquefarm" target="_blank">@ElBosqueFarm</a> · <a href="mailto:elbosquefarminfo@gmail.com"><span data-i18n="contact.email">Correo</span></a></p>
+  <div class="footer-map">
+    <div class="footer-map__text">
+      <h3 data-i18n="footer.address.title">Nuestra ubicación</h3>
+      <p class="address-line" data-i18n="footer.address.address">14370 SW 208th Ave, Miami, FL 33196</p>
+      <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&query=14370+SW+208th+Ave,+Miami,+FL+33196" target="_blank" rel="noopener" data-i18n="footer.address.open_map">Ver en Google Maps</a>
+    </div>
+    <div class="footer-map__map" aria-label="Google Maps">
+      <iframe
+        title="Google Maps — 14370 SW 208th Ave, Miami, FL 33196"
+        src="https://www.google.com/maps?q=14370+SW+208th+Ave,+Miami,+FL+33196&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/js/main.js?v=15"></script>
+<script src="assets/js/app.js?v=15"></script>
+
+<script src="assets/js/app.js"></script>
+
+<script>
+(function(){
+  const form = document.getElementById('contact-form');
+  if(!form) return;
+  function getWaNumber(){
+    const link = document.querySelector('a[href*="wa.me"]');
+    if(link){
+      const m = link.href.match(/wa\.me\/(\d+)/);
+      if(m) return m[1];
+    }
+    return '17864036850';
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = (document.getElementById('cf-name').value||'').trim();
+    const email = (document.getElementById('cf-email').value||'').trim();
+    const address = (document.getElementById('cf-address').value||'').trim();
+    const message = (document.getElementById('cf-message').value||'').trim();
+    if(!name || !email || !message){
+      const es = !window.I18N || (window.I18N.getLang && window.I18N.getLang()) !== 'en';
+      alert(es ? 'Por favor completa Nombre, Correo y Mensaje.' : 'Please complete Name, Email and Message.');
+      return;
+    }
+    const lang = (window.I18N && I18N.getLang && I18N.getLang()) || 'es';
+    const intro = lang === 'en' ? 'New contact from the website' : 'Nuevo contacto desde la web';
+    const body =
+      `*${intro}*\n\n` +
+      `Nombre: ${name}\n` +
+      `Email: ${email}\n` +
+      (address ? `Dirección: ${address}\n` : '') +
+      `Mensaje: ${message}`;
+    const url = `https://wa.me/${getWaNumber()}?text=` + encodeURIComponent(body);
+    window.open(url, '_blank');
+  });
+
+  // set background image placeholder; user can replace file later
+  const hero = document.querySelector('.contact-hero');
+  if(hero){
+    hero.style.backgroundImage = "url('assets/img/contact-hero.jpg')";
+  }
+})();
+</script>
+
+</body>
+</html>
